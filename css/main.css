@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    background-color: #f0f5f5;
+}
+.material-section {
+    background-color: #f0f5f5;
+    padding: 2em;
+    font-family: "Nunito", sans-serif;
+}
+.ms-title {
+    color: #095db7;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ms-title h3 {
+    margin: 0;
+}
+.ms-breadcrumb {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.ms-breadcrumb a {
+    color: #4db15a;
+    text-decoration: none;
+}
+
+.ms-body {
+    background-color: #fff;
+    padding: 1em 2em;
+    border-radius: 5px;
+}
+
+.msb-options-panel {
+    padding: 0 2em;
+}
+
+.msb-option {
+    height: 72px;
+    background: #e4eaec 0% 0% no-repeat padding-box;
+    box-shadow: 0px 2px 3px #00000029;
+    border-radius: 11px;
+    margin: 1em 0;
+    display: flex;
+}
+
+.msb-option-body {
+    padding: 12px 0.5em 12px 2em;
+    width: 100%;
+}
+
+.msb-option-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.msb-static-options {
+    margin-top: 3em;
+}
+
+.msb-checkbox {
+    align-self: center;
+}
+
+.msb-option-sub {
+    color: #526069;
+    font-size: 12px;
+}
+
+.msb-option-title {
+    margin-bottom: 4px;
+}
+
+.msb-option-title span {
+    color: #085cb7;
+    text-decoration: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.msb-bg {
+    width: 80px;
+    height: 72px;
+    text-align: center;
+    color: #fff;
+}
+
+.msb-bg span {
+    font-size: 35px;
+    padding: 17px 0 0 0px;
+}
+
+.msb-bg-red {
+    background-image: url(../images/rosado.svg);
+}
+
+.msb-bg-yellow {
+    background-image: url(../images/amarillo.svg);
+}
+
+.msb-bg-green {
+    background-image: url(../images/verde.svg);
+}
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: opacity 0.3s ease;
+}
+
+.modal-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.modal-container {
+    max-width: 604px;
+    width: 85%;
+    height: fit-content;
+    margin: 0px auto;
+    padding: 20px;
+    text-align: left;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 5px solid #526168;
+    cursor: pointer;
+}
+
+.modal-close span {
+    color: #526168;
+    font-size: 30px;
+    padding: 0px;
+    margin: -5px;
+}
+
+@media (max-width: 630px) {
+    .msb-options-panel {
+        padding: 0;
+    }
+    .msb-option-body {
+        padding: 12px 0.5em 12px 1em;
+        width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    .ms-body {
+        background-color: #fff;
+        padding: 1em 1em;
+        border-radius: 5px;
+    }
+    .material-section {
+        background-color: #f0f5f5;
+        padding: 2em 0em;
+        font-family: "Nunito", sans-serif;
+    }
+    .msb-option-title {
+        margin-bottom: 0px;
+    }
+    .msb-option-body {
+        padding: 5px 0.5em 12px 1em;
+        width: 100%;
+    }
+    .container {
+        padding-left: 0px !important;
+    }
+    .msb-option-title span {
+        font-size: 15px;
+    }
+}

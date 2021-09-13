@@ -1,0 +1,128 @@
+<link rel="stylesheet" href="./css/main.css" />
+<link rel="stylesheet" href="./css/checkbox.css" />
+<link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet"
+/>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+    rel="stylesheet"
+/>
+<div id="app">
+    <div class="material-section">
+        <div class="ms-title">
+            <h1>ejemplo sap</h1>
+        </div>
+        <div class="ms-breadcrumb">
+            <a href="#">Pagina Principal</a> / <a href="#">Cursos</a> /
+            <a href="#">Ejemplo SAP</a> / <a href="#">General</a> /
+            <a href="#">1. Revisar material</a>
+        </div>
+        <div class="ms-body">
+            <div class="msb-header">
+                <h1>1. Revisar material</h1>
+                <div class="msb-settings"></div>
+            </div>
+            <div class="msb-options-panel">
+                <div class="msb-dynamic-options">
+                    <div
+                        v-for="(item, index) in material"
+                        class="msb-option"
+                        :key="item.id"
+                    >
+                        <div class="msb-bg msb-bg-red">
+                            <span class="material-icons-outlined"
+                                >{( item.material_icon )}</span
+                            >
+                        </div>
+                        <div class="msb-option-body">
+                            <div class="msb-option-header">
+                                <div class="msb-option-title">
+                                    <span
+                                        @click="showModal = true, material_item = item"
+                                        >{( item.material_title )}</span
+                                    >
+                                </div>
+                                <div class="msb-checkbox">
+                                    <label class="container">
+                                        <input
+                                            type="checkbox"
+                                            :checked="item.marked == true ? 'checked' : ''"
+                                            @click="dynamicOptionCheckbox(item.id)"
+                                        />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="msb-option-sub">{( item.updated )}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="msb-static-options">
+                    <div class="msb-option">
+                        <div class="msb-bg msb-bg-yellow">
+                            <span class="material-icons">headset_mic</span>
+                        </div>
+                        <div class="msb-option-body">
+                            <div class="msb-option-header">
+                                <div class="msb-option-title">
+                                    <span @click="showModal = true"
+                                        >¿llevaste la capacitación en
+                                        vivo?</span
+                                    >
+                                </div>
+                                <div class="msb-checkbox">
+                                    <label class="container">
+                                        <input
+                                            type="checkbox"
+                                            @click="staticOptionCheckbox()"
+                                        />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="msb-option">
+                        <div class="msb-bg msb-bg-green">
+                            <span class="material-icons-outlined">task</span>
+                        </div>
+                        <div class="msb-option-body">
+                            <div class="msb-option-header">
+                                <div class="msb-option-title">
+                                    <span @click="showModal = true"
+                                        >¿practicaste en el sistema?</span
+                                    >
+                                </div>
+                                <div class="msb-checkbox">
+                                    <label class="container">
+                                        <input
+                                            type="checkbox"
+                                            @click="staticOptionCheckbox()"
+                                        />
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <modal
+            :material_item="material_item"
+            v-on:toggle-modal="toggleModal"
+            v-show="showModal"
+        ></modal>
+    </div>
+</div>
+
+<script>
+    const sesskey = "{{sesskey}}";
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="./js/revisionmaterial.js"></script>
